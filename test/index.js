@@ -4,6 +4,15 @@ var expect = require('chai').expect,
 
 var child
 
+describe('server.js', function () {
+  it('must use requestHandler', function(done){
+    var code = require(require('path').join(__dirname, '..', 'server.js'))
+    expect(code).to.contain('requestHandler')
+    done()
+
+  })
+})
+
 describe('server', function () {
   it('must run', function(done){
     child = cp.exec('node server.js',
