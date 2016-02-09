@@ -42,3 +42,10 @@ describe('server', function () {
   })
 })
 
+
+after(function(){
+  if (typeof killResult == 'undefined') {
+    child.kill()
+  }
+})
+
