@@ -6,7 +6,7 @@ var child
 
 describe('server.js', function () {
   it('must use requestHandler', function(done){
-    var code = require(require('path').join(__dirname, '..', 'server.js'))
+    var code = require('fs').readFileSync(require('path').join(__dirname, '..', 'server.js')).toString('utf-8')
     expect(code).to.contain('requestHandler')
     done()
 
