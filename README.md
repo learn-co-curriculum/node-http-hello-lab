@@ -27,10 +27,8 @@ In this lab, you'll implement the quintessential Hello World of the HTTP servers
 
 
 
-
 ### Extra Info
 
 
 * [node-dev](https://github.com/iliakan/node-dev)
 * [nodemon](https://github.com/remy/nodemon)
-* 
