@@ -6,7 +6,7 @@
 1. Start the server, test it, close it
 1. Utilize async way of coding by using callbacks
 1. Observe that each time you make a change you need to restart the process
-1. Download and use node-dev or nodemon
+1. Download and use `node-dev` or `nodemon`
 
 ## Introduction
 
@@ -29,3 +29,8 @@ In this lab, you'll implement the quintessential Hello World of the HTTP servers
 
 
 ### Extra Info
+
+
+* [node-dev](https://github.com/iliakan/node-dev)
+* [nodemon](https://github.com/remy/nodemon)
+* 
