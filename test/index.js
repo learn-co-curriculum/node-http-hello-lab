@@ -32,8 +32,9 @@ describe('server', function () {
 describe('server', function () {
   it('must respond with Hello World', function(done){
     supertest('http://localhost:3000').get('/')
-      .expect(200, 'Hello World\n')
       .end(function(error, response){
+        expect(response.res.text).to.equal('Hello World\n')
+        expect(response.res.statusCode).to.equal(200)
         var killResult = child.kill()
         expect(killResult).to.be.true
         done()
