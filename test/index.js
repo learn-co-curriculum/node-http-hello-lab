@@ -4,6 +4,11 @@ var expect = require('chai').expect,
 
 var child
 
+before(function (done) {
+  child = cp.exec('node server.js', function (error, stdout, stderr) { if (error) console.log('exec error: ' + error)})
+  setTimeout(done, 400)
+})
+
 describe('server.js', function () {
   it('must use requestHandler', function(done){
     var code = require('fs').readFileSync(require('path').join(__dirname, '..', 'server.js')).toString('utf-8')
@@ -13,21 +18,7 @@ describe('server.js', function () {
   })
 })
 
-describe('server', function () {
-  it('must run', function(done){
-    child = cp.exec('node server.js',
-    function (error, stdout, stderr) {
-      expect(stderr).to.equal('')
-      if (error !== null) {
-        console.log('exec error: ' + error)
-      }
 
-    })
-    setTimeout(function(){
-        done()
-    }, 400)
-  })
-})
 
 describe('server', function () {
   it('must respond with Hello World', function(done){
@@ -44,8 +35,10 @@ describe('server', function () {
 
 
 after(function(){
-  if (typeof killResult == 'undefined') {
-    child.kill()
+  if (typeof child != 'undefined' && child && !child.killed) {
+    var killResult = child.kill()
+    expect(killResult).to.be.true
+    expect(child.killed).to.be.true
   }
 })
 
