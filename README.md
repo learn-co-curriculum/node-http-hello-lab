@@ -20,15 +20,14 @@ In this lab, you'll implement the quintessential Hello World of the HTTP servers
 2. In `server.js` implement http server with `createServer`
 3. Use named function `requestHandler` as the request handler for the server
 4. Output "Hello\n" (`\n` is for the new line)
-5. Start the server with `$ node server` and test with CURL
+5. Start the server with `node server` and test with CURL
 6. Make changes to output "Hello World\n" and observe that the server code wasn't updated in the process
-7. Download node-dev or nodemon. 
+7. Download `node-dev` or `nodemon`, the development tools for Node.js which watch for source code changes and restart the applications accordingly.
+8. Run `server.js` with `node-dev` or `nodemon`. Observe that now every time you make a change to the source code, the server will restart.
 8. Run tests with `npm install && npm test`
 
 
-
-### Extra Info
-
+### Resources
 
 * [node-dev](https://github.com/iliakan/node-dev)
 * [nodemon](https://github.com/remy/nodemon)
