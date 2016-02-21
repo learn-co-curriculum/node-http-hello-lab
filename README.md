@@ -26,6 +26,7 @@ In this lab, you'll implement the quintessential Hello World of the HTTP servers
 8. Run `server.js` with `node-dev` or `nodemon`. Observe that now every time you make a change to the source code, the server will restart.
 8. Run tests with `npm install && npm test`
 
+In the `test.js`, we are using `before` and `after`. They have some preparatory and clean up code correspondingly. For example, in `before` we start the server using `child_process.exec` (similar to `child_process.spawn`). While in `after`, we terminal that same process by referencing variable `child` and invoking `kill()`.
 
 ### Resources
 
